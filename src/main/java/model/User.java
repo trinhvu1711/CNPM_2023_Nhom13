@@ -7,7 +7,7 @@ public class User {
     private String address;
     private String pass;
     private String name;
-    private int phone;
+    private String phone;
     String email;
     Date birthday;
     Date datesignup;
@@ -17,7 +17,7 @@ public class User {
     public User() {
     }
 
-    public User(String iduser, String address, String pass, String name, int phone, String email, Date birthday, Date datesignup, int sex, int decentralization) {
+    public User(String iduser, String address, String pass, String name, String phone, String email, Date birthday, Date datesignup, int sex, int decentralization) {
         this.iduser = iduser;
         this.address = address;
         this.pass = pass;
@@ -37,7 +37,7 @@ public class User {
         } else if (this.decentralization == 1) {
             return "Admin";
         }
-        return "Khoá";
+        return "Đã bị khoá";
     }
 
     public String getIduser() {
@@ -60,7 +60,7 @@ public class User {
         return name;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
@@ -72,5 +72,51 @@ public class User {
         return datesignup;
     }
 
+    public Date getBirthday() {
+        return birthday;
+    }
 
+    public int getSex() {
+        return sex;
+    }
+
+    public int getDecentralization() {
+        return decentralization;
+    }
+
+    public void setIduser(String iduser) {
+        this.iduser = iduser;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
+    }
+
+    public void setDatesignup(Date datesignup) {
+        this.datesignup = datesignup;
+    }
+
+    public void setSex(int sex) {
+        this.sex = sex;
+    }
+
+    public void setDecentralization(int decentralization) {
+        this.decentralization = decentralization;
+    }
 }
