@@ -15,7 +15,7 @@ public class ManageUser extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<User> list = UserService.getInstance().getListUser();
         request.setAttribute("listUser", list);
-        request.getRequestDispatcher("manage_user.jsp").forward(request,response);
+        request.getRequestDispatcher("ManageAccount.jsp").forward(request,response);
     }
 
     @Override
@@ -24,6 +24,6 @@ public class ManageUser extends HttpServlet {
         String idUser= request.getParameter("idUser");
         int decentralization= Integer.parseInt(request.getParameter("decentralization"));
         UserService.getInstance().updateUser( idUser, decentralization);
-        response.sendRedirect("http://localhost:8080/BHNFoods/AdminManageUser");
+        response.sendRedirect("http://localhost:8080/CNPM/ManageUser");
     }
 }

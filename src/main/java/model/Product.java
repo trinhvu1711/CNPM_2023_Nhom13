@@ -1,7 +1,7 @@
 package model;
 
 public class Product {
-    String idpr;
+    int idpr;
     int discount;
     int price;
     String idkind;
@@ -9,7 +9,7 @@ public class Product {
     public Product() {
 
     }
-    public Product(String idpr, int discount, int price, String idkind, String namepr) {
+    public Product(int idpr, int discount, int price, String idkind, String namepr) {
         this.idpr = idpr;
         this.discount = discount;
         this.price = price;
@@ -17,11 +17,11 @@ public class Product {
         this.namepr = namepr;
     }
 
-    public String getIdpr() {
+    public int getIdpr() {
         return idpr;
     }
 
-    public void setIdpr(String idpr) {
+    public void setIdpr(int idpr) {
         this.idpr = idpr;
     }
 

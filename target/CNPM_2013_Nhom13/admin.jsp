@@ -1,6 +1,4 @@
-<%@ page import="java.util.List" %>
-<%@ page import="model.User" %>
-<%@ page import="model.DetailProduct" %>
+
 <%@ page contentType="text/html; charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 
 <!DOCTYPE html>
@@ -9,7 +7,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>BHNFoods Admin </title>
+    <title>CNPM Admin </title>
     <link rel="stylesheet" href="admin_template/vendors/feather/feather.css">
     <link rel="stylesheet" href="admin_template/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="admin_template/vendors/ti-icons/css/themify-icons.css">
@@ -19,63 +17,38 @@
     <link rel="stylesheet" href="vendors/datatables.net-bs4/dataTables.bootstrap4.css">
     <link rel="stylesheet" href="admin_template/js/select.dataTables.min.css">
     <link rel="stylesheet" href="admin_template/css/vertical-layout-light/style.css">
-    <!-- endinject -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <style>
+        .page-body-wrapper .fix-navbar {
+            padding-top: 20px;
+        }
+
+        .page-body-wrapper .fix-navbar .menu_navbar {
+            height: 60px;
+        }
+
+        .page-body-wrapper .fix-navbar .menu_navbar .nav-item-link {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            line-height: 60px;
+        }
+
+        .page-body-wrapper .fix-navbar .menu_navbar:hover {
+            background: #d3d3d3;
+        }
+    </style>
 
 </head>
-<style>
-    #viewcontent .edit_formUser {
-        height: 500%;
-        width: 100%;
-        background: rgba(0, 0, 0, 0.73);
-        position: absolute;
-        z-index: 1500;
-        top: 0;
 
-    }
-
-    .edit_formUser .cen-div {
-        margin: auto;
-        background: #f1f1f1;
-        width: 50%;
-        margin-top: 2%;
-        border-radius: 5px;
-    }
-
-    .edit_formUser .padding10px {
-        padding: 10px 0;
-    }
-
-    .edit_formUser .cen-div form .form-group {
-        margin-bottom: 1.1rem;
-    }
-
-    .btn_huy_update {
-        margin-bottom: 20px;
-        justify-content: end;
-    }
-
-    .btn_huy_update input {
-        border-radius: 5px;
-        background: #7fad39;
-        border: none;
-        padding: 8px 20px;
-        color: white;
-    }
-
-    .row .col-sm-12 .grid_statistical {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-</style>
 
 <body>
 <!-- partial:partials/_navbar.html -->
 <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex align-items-top flex-row">
     <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
         <div>
-            <a class="navbar-brand brand-logo" href="adminMain.jsp">
-                BHNFoods
+            <a style="font-size: 2.5rem;" class="navbar-brand brand-logo" href="admin.jsp">CNPM <i class="fa-solid fa-caravan brand-logo"></i>
             </a>
         </div>
     </div>
@@ -89,29 +62,23 @@
                      aria-labelledby="messageDropdown">
 
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item preview-item" href="/BHNFoods/AdminManageUser">
+                    <a class="dropdown-item preview-item" href="/CNPM/admin.jsp">
+                        <div class="preview-item-content flex-grow py-2">
+                            <p class="preview-subject ellipsis font-weight-medium text-dark">Admin</p>
+                            <p class="fw-light small-text mb-0">Trang chủ</p>
+                        </div>
+                    </a>
+                    <a class="dropdown-item preview-item" href="/CNPM/ManageUser">
                         <div class="preview-item-content flex-grow py-2">
                             <p class="preview-subject ellipsis font-weight-medium text-dark">Người dùng </p>
                             <p class="fw-light small-text mb-0">Trang chi tiết người dùng</p>
                         </div>
                     </a>
-                    <a class="dropdown-item preview-item" href="/BHNFoods/AdminMain">
-                        <div class="preview-item-content flex-grow py-2">
-                            <p class="preview-subject ellipsis font-weight-medium text-dark">Admin</p>
-                            <p class="fw-light small-text mb-0">Trang chi tiết Admin</p>
-                        </div>
-                    </a>
                     <a class="dropdown-item preview-item"
-                       href="/BHNFoods/AdminManagePr?kind=0&page=1">
+                       href="/CNPM/ManageProduct">
                         <div class="preview-item-content flex-grow py-2">
                             <p class="preview-subject ellipsis font-weight-medium text-dark">Sản Phẩm </p>
                             <p class="fw-light small-text mb-0">Trang chi tiết quản lý sản phẩm</p>
-                        </div>
-                    </a>
-                    <a class="dropdown-item preview-item" href="#">
-                        <div class="preview-item-content flex-grow py-2">
-                            <p class="preview-subject ellipsis font-weight-medium text-dark">Đơn hàng </p>
-                            <p class="fw-light small-text mb-0">Trang quản lý đơn hàng</p>
                         </div>
                     </a>
 
@@ -131,12 +98,11 @@
                     <input type="search" class="form-control" placeholder="Search Here" title="Search here">
                 </form>
             </li>
-            <% int sumcontact=  (int) request.getAttribute("sumcontact");%>
+
             <li class="nav-item dropdown">
                 <a class="nav-link count-indicator" id="countDropdown" href="" data-bs-toggle="dropdown"
                    aria-expanded="false">
-                    <i class="icon-mail icon-lg">[<%=sumcontact%>]</i>
-
+                    <i class="icon-mail icon-lg">[3]</i>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0"
                      aria-labelledby="countDropdown">
@@ -146,8 +112,7 @@
                     </a>
                     <div class="dropdown-divider"></div>
 
-                    <a class="dropdown-item preview-item" style="background: #c5e2f8; border-bottom:1px solid #808080"
-                       onclick="viewContent('<%=c.getIdcontact()%>','<%=c.getIduser()%>','<%=c.getNameUser()%>','<%=c.getPhone()%>','<%=c.getEmail()%>','<%=c.getContent()%>', '<%=c.getCondition()%>')">
+                    <a class="dropdown-item preview-item">
                         <div class="preview-thumbnail">
                             <img src="https://assets.materialup.com/uploads/378d2c84-810d-477a-802b-d495646b9c4e/preview.jpg"
                                  alt="image" class="img-sm profile-pic"
@@ -155,17 +120,15 @@
                         </div>
                         <div class="preview-item-content flex-grow pyy-2">
                             <p class="preview-subject ellipsis font-weight-medium text-dark">
-                                <%=c.getNameUser()%>
+                            Xuân Hoa
                             </p>
                             <p class="fw-light small-text mb-0">
-                                <%=c.getDateTime()%>
+                               20:01 04-05-2023
                             </p>
                         </div>
                     </a>
-                    <%} else {
-                    %>
                     <a class="dropdown-item preview-item"
-                       onclick="viewContent('<%=c.getIdcontact()%>','<%=c.getIduser()%>','<%=c.getNameUser()%>','<%=c.getPhone()%>','<%=c.getEmail()%>','<%=c.getContent()%>')">
+                       onclick="viewContent()">
                         <div class="preview-thumbnail">
                             <img src="https://assets.materialup.com/uploads/378d2c84-810d-477a-802b-d495646b9c4e/preview.jpg"
                                  alt="image" class="img-sm profile-pic"
@@ -173,32 +136,15 @@
                         </div>
                         <div class="preview-item-content flex-grow pyy-2">
                             <p class="preview-subject ellipsis font-weight-medium text-dark">
-                                <%=c.getNameUser()%>
+                               Trịnh Long Vũ
                             </p>
                             <p class="fw-light small-text mb-0">
-                                <%=c.getDateTime()%>
+                                20:01 04-05-2022
                             </p>
                         </div>
                     </a>
-                    <%}%>
-                    <%}%>
                 </div>
             </li>
-            <%
-                String data = (String) request.getAttribute("data");
-                String data0 = (String) request.getAttribute("data0");
-                int stopPr = (int) request.getAttribute("stopSaled");
-                int newbie = (int) request.getAttribute("newbie");
-                int saledPr = (int) request.getAttribute("saledPr");
-                String data1 = (String) request.getAttribute("data1");
-                int nowTur = (int) request.getAttribute("nowTur");
-                int allTur = (int) request.getAttribute("alltur");
-                List<DetailProduct> hotSale = (List<DetailProduct>) request.getAttribute("hotSale");
-                User user = (User) session.getAttribute("auth");
-                if (user != null) {
-            %>
-
-            <%}%>
         </ul>
         <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
                 data-bs-toggle="offcanvas">
@@ -208,34 +154,27 @@
 </nav>
 <!-- partial -->
 <div class="container-fluid page-body-wrapper">
-    <nav class="sidebar sidebar-offcanvas" id="sidebar">
-        <div class="nav-item">
-            <a href="/BHNFoods/AdminMain" class="nav-item-link">
+    <nav class="sidebar sidebar-offcanvas fix-navbar" id="sidebar">
+        <div class="nav-item menu_navbar">
+            <a href="/CNPM/admin.jsp" class="nav-item-link">
                 <i style="margin-right: 5px;" class="menu-icon mdi mdi-home"></i>
                 <span>Trang chủ</span>
             </a>
         </div>
-        <div class="nav-item">
-            <a href="/BHNFoods/AdminManageUser" class="nav-item-link">
+        <div class="nav-item menu_navbar">
+            <a href="/CNPM/ManageUser" class="nav-item-link">
                 <i style="margin-right: 5px;" class="menu-icon mdi mdi-account-circle"></i>
-                <span>Quản lý người dùng</span>
+                <span>Quản lý tài khoản</span>
             </a>
         </div>
-
-        <div class="nav-item">
-            <a href="/BHNFoods/AdminManagePr?kind=0&page=1" class="nav-item-link">
+        <div class="nav-item menu_navbar">
+            <a href="/CNPM/ManageProduct" class="nav-item-link">
                 <i style="margin-right: 5px;" class="menu-icon mdi mdi-view-module"></i>
                 <span>Quản lý sản phẩm</span>
             </a>
         </div>
-        <div class="nav-item">
-            <a href="/BHNFoods/ListLog" class="nav-item-link">
-                <i style="margin-right: 5px;" class="fa-solid fa-arrow-down-wide-short"></i>
-                <span>Log</span>
-            </a>
-        </div>
-        <div class="nav-item">
-            <a href="/BHNFoods/Login" class="nav-item-link">
+        <div class="nav-item menu_navbar">
+            <a href="/CNPM/Login" class="nav-item-link">
                 <i style="margin-right: 5px;" class="fa-solid fa-arrow-right-from-bracket"></i>
                 <span>Đăng xuất</span>
             </a>
@@ -245,196 +184,319 @@
     <div class="main-panel">
         <div class="content-wrapper">
             <div class="row">
-                <div class="col-sm-12">
-                    <div class="home-tab">
-                        <div class="d-sm-flex align-items-center justify-content-between border-bottom">
-                            <ul class="nav nav-tabs" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active ps-0" id="home-tab" data-bs-toggle="tab" href="#overview"
-                                       role="tab"
-                                       aria-controls="overview" aria-selected="true">Tổng quan</a>
-                                </li>
-
-                            </ul>
-                            <div>
-                                <%--                <div class="btn-wrapper">--%>
-                                <%--                  <a href="#" class="btn btn-otline-dark align-items-center"><i class="icon-share"></i> Chia sẻ</a>--%>
-                                <%--                  <a href="#" class="btn btn-otline-dark"><i class="icon-printer"></i> In</a>--%>
-                                <%--                  <a href="#" class="btn btn-primary text-white me-0"><i class="icon-download"></i> Xuất</a>--%>
-                                <%--                </div>--%>
+                <div class="col-md-4 stretch-card grid-margin">
+                    <div class="card bg-gradient-danger card-img-holder text-white">
+                        <div class="card-body">
+                            <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
+                            <h4 class="font-weight-normal mb-3">Weekly Sales <i class="mdi mdi-chart-line mdi-24px float-right"></i>
+                            </h4>
+                            <h2 class="mb-5">$ 15,0000</h2>
+                            <h6 class="card-text">Increased by 60%</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 stretch-card grid-margin">
+                    <div class="card bg-gradient-info card-img-holder text-white">
+                        <div class="card-body">
+                            <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
+                            <h4 class="font-weight-normal mb-3">Weekly Orders <i class="mdi mdi-bookmark-outline mdi-24px float-right"></i>
+                            </h4>
+                            <h2 class="mb-5">45,6334</h2>
+                            <h6 class="card-text">Decreased by 10%</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 stretch-card grid-margin">
+                    <div class="card bg-gradient-success card-img-holder text-white">
+                        <div class="card-body">
+                            <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
+                            <h4 class="font-weight-normal mb-3">Visitors Online <i class="mdi mdi-diamond mdi-24px float-right"></i>
+                            </h4>
+                            <h2 class="mb-5">95,5741</h2>
+                            <h6 class="card-text">Increased by 5%</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-7 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="clearfix">
+                                <h4 class="card-title float-left">Visit And Sales Statistics</h4>
+                                <div id="visit-sale-chart-legend" class="rounded-legend legend-horizontal legend-top-right float-right"></div>
+                            </div>
+                            <canvas id="visit-sale-chart" class="mt-4"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Traffic Sources</h4>
+                            <canvas id="traffic-chart"></canvas>
+                            <div id="traffic-chart-legend" class="rounded-legend legend-vertical legend-bottom-left pt-4"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 grid-margin">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Recent Tickets</h4>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th> Assignee </th>
+                                        <th> Subject </th>
+                                        <th> Status </th>
+                                        <th> Last Update </th>
+                                        <th> Tracking ID </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>
+                                            <img src="assets/images/faces/face1.jpg" class="me-2" alt="image"> David Grey
+                                        </td>
+                                        <td> Fund is not recieved </td>
+                                        <td>
+                                            <label class="badge badge-gradient-success">DONE</label>
+                                        </td>
+                                        <td> Dec 5, 2017 </td>
+                                        <td> WD-12345 </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <img src="assets/images/faces/face2.jpg" class="me-2" alt="image"> Stella Johnson
+                                        </td>
+                                        <td> High loading time </td>
+                                        <td>
+                                            <label class="badge badge-gradient-warning">PROGRESS</label>
+                                        </td>
+                                        <td> Dec 12, 2017 </td>
+                                        <td> WD-12346 </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <img src="assets/images/faces/face3.jpg" class="me-2" alt="image"> Marina Michel
+                                        </td>
+                                        <td> Website down for one week </td>
+                                        <td>
+                                            <label class="badge badge-gradient-info">ON HOLD</label>
+                                        </td>
+                                        <td> Dec 16, 2017 </td>
+                                        <td> WD-12347 </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <img src="assets/images/faces/face4.jpg" class="me-2" alt="image"> John Doe
+                                        </td>
+                                        <td> Loosing control on server </td>
+                                        <td>
+                                            <label class="badge badge-gradient-danger">REJECTED</label>
+                                        </td>
+                                        <td> Dec 3, 2017 </td>
+                                        <td> WD-12348 </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
-                        <div class="tab-content tab-content-basic">
-                            <div class="tab-pane fade show active" id="overview" role="tabpanel"
-                                 aria-labelledby="overview">
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <div class="statistics-details  align-items-center justify-content-between grid_statistical">
-                                            <div>
-                                                <p class="statistics-title">Tổng doanh thu </p>
-                                                <h3 class="rate-percentage"><%=allTur%> VNĐ</h3>
-
-                                            </div>
-                                            <div>
-                                                <p class="statistics-title">Doanh thu tháng hiện tại</p>
-                                                <h3 class="rate-percentage"><%=nowTur%> VNĐ</h3>
-                                            </div>
-                                            <div>
-                                                <p class="statistics-title">Số mặt hàng đã bán</p>
-                                                <h3 class="rate-percentage"><%=saledPr%>
-                                                </h3>
-
-                                            </div>
-                                            <div>
-                                                <p class="statistics-title">Mặt hàng ngừng kinh doanh</p>
-                                                <h3 class="rate-percentage"><%=stopPr%>
-                                                </h3>
-                                            </div>
-                                            <div class="d-none d-md-block">
-                                                <p class="statistics-title">Khách hàng mới</p>
-                                                <h3 class="rate-percentage"><%=newbie%>
-                                                </h3>
-                                            </div>
-                                        </div>
-                                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Recent Updates</h4>
+                            <div class="d-flex">
+                                <div class="d-flex align-items-center me-4 text-muted font-weight-light">
+                                    <i class="mdi mdi-account-outline icon-sm me-2"></i>
+                                    <span>jack Menqu</span>
                                 </div>
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <div class="statistics-details  align-items-center justify-content-between grid_statistical">
-                                            <div>
-                                                <p class="statistics-title">Hàng tồn kho</p>
-                                                <h3 class="rate-percentage"><%=nowTur%> VNĐ</h3>
-
-                                            </div>
-                                            <div>
-                                                <p class="statistics-title">Sản phẩm bán chạy nhất</p>
-                                                <h3 class="rate-percentage"><%=saledPr%>
-                                                </h3>
-
-                                            </div>
-                                            <div>
-                                                <p class="statistics-title">Sản phẩm cần nhập kho</p>
-                                                <h3 class="rate-percentage"><%=stopPr%>
-                                                </h3>
-
-                                            </div>
-                                            <div class="d-none d-md-block">
-                                                <p class="statistics-title">Sản phẩm bị hoàn trả</p>
-                                                <h3 class="rate-percentage"><%=newbie%>
-                                                </h3>
-                                            </div>
-
-                                        </div>
-                                    </div>
+                                <div class="d-flex align-items-center text-muted font-weight-light">
+                                    <i class="mdi mdi-clock icon-sm me-2"></i>
+                                    <span>October 3rd, 2018</span>
                                 </div>
-                                <div class="row ">
-                                    <div class="col-lg-8 d-flex flex-column">
-                                        <div class="row flex-grow">
-                                            <div class="col-12 grid-margin stretch-card">
-                                                <div class="card card-rounded">
-                                                    <div class="card-body">
-                                                        <div class="d-sm-flex justify-content-between align-items-start">
-                                                            <div>
-                                                                <h4 class="card-title card-title-dash">Biểu đồ doanh thu
-                                                                    theo năm</h4>
-
-                                                            </div>
-
-                                                        </div>
-                                                        <%
-                                                            int tur = (int) request.getAttribute("tur");
-                                                            int tur1 = (int) request.getAttribute("tur1");
-//                                                    double pec = (double) request.getAttribute("pec");
-                                                        %>
-                                                        <div class="d-sm-flex align-items-center mt-1 justify-content-between">
-                                                            <div class="d-sm-flex align-items-center mt-4 justify-content-between">
-                                                                <h2 class="me-2 fw-bold">Tổng doanh thu năm
-                                                                    2023 là:     <%=tur1%>
-                                                                </h2>
-                                                                <h4 class="me-2">VNĐ</h4>
-                                                                <%--                                                                <h4 class="text-success">(+<%=pec%>%)</h4>--%>
-                                                            </div>
-                                                            <div class="me-3">
-                                                                <div id="marketing-overview-legend"></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="chartjs-bar-wrapper mt-3">
-                                                            <canvas id="marketingOverview"></canvas>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row flex-grow">
-                                        <div class="col-md-6 col-lg-6 grid-margin stretch-card">
-                                            <div class="card card-rounded">
-                                                <div class="card-body card-rounded">
-                                                    <h4 class="card-title  card-title-dash">Ngày nhập lô hàng</h4>
-
-<%--                                                    <% int i = 10;--%>
-
-<%--                                                        List<SingleProduct> list = ProductService.getInstance().getListPrDateImport(i);--%>
-<%--                                                        for (SingleProduct s : list) {--%>
-
-<%--                                                    %>--%>
-                                                    <div class="list align-items-center border-bottom py-2">
-                                                        <div class="wrapper w-100">
-                                                            <p class="mb-2 font-weight-medium">
-                                                                <%=s.getNamePr()%>
-                                                            </p>
-                                                            <div class="d-flex justify-content-between align-items-center">
-                                                                <div class="d-flex align-items-center">
-                                                                    <i class="mdi mdi-calendar text-muted me-1"></i>
-                                                                    <p class="mb-0 text-small text-muted"><%=s.getDateImportPr()%>
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <%}%>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-lg-6 grid-margin stretch-card">
-                                            <div class="card card-rounded">
-                                                <div class="card-body">
-                                                    <div class="d-flex align-items-center justify-content-between mb-3">
-                                                        <h4 class="card-title card-title-dash">Sản phẩm bán chạy</h4>
-                                                        <%--                        <p class="mb-0">fliter</p>--%>
-                                                    </div>
-                                                    <ul class="bullet-line-list">
-                                                        <%for (int j = 0; j < 15; j++) {%>
-                                                        <li>
-                                                            <div class="d-flex justify-content-between">
-                                                                <div><span
-                                                                        class="text-light-green"><%=hotSale.get(j).getNamePr()%> </span>
-                                                                </div>
-                                                                <p><%=hotSale.get(j).getPrice()%>
-                                                                    VND</p>
-                                                            </div>
-                                                        </li>
-                                                        <%}%>
-                                                    </ul>
-                                                    <div class="list align-items-center pt-3">
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-6 pe-1">
+                                    <img src="assets/images/dashboard/img_1.jpg" class="mb-2 mw-100 w-100 rounded" alt="image">
+                                    <img src="assets/images/dashboard/img_4.jpg" class="mw-100 w-100 rounded" alt="image">
+                                </div>
+                                <div class="col-6 ps-1">
+                                    <img src="assets/images/dashboard/img_2.jpg" class="mb-2 mw-100 w-100 rounded" alt="image">
+                                    <img src="assets/images/dashboard/img_3.jpg" class="mw-100 w-100 rounded" alt="image">
+                                </div>
+                            </div>
+                            <div class="d-flex mt-5 align-items-top">
+                                <img src="assets/images/faces/face3.jpg" class="img-sm rounded-circle me-3" alt="image">
+                                <div class="mb-0 flex-grow">
+                                    <h5 class="me-2 mb-2">School Website - Authentication Module.</h5>
+                                    <p class="mb-0 font-weight-light">It is a long established fact that a reader will be distracted by the readable content of a page.</p>
+                                </div>
+                                <div class="ms-auto">
+                                    <i class="mdi mdi-heart-outline text-muted"></i>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-7 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Project Status</h4>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th> # </th>
+                                        <th> Name </th>
+                                        <th> Due Date </th>
+                                        <th> Progress </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td> 1 </td>
+                                        <td> Herman Beck </td>
+                                        <td> May 15, 2015 </td>
+                                        <td>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-gradient-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td> 2 </td>
+                                        <td> Messsy Adam </td>
+                                        <td> Jul 01, 2015 </td>
+                                        <td>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-gradient-danger" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td> 3 </td>
+                                        <td> John Richards </td>
+                                        <td> Apr 12, 2015 </td>
+                                        <td>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-gradient-warning" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td> 4 </td>
+                                        <td> Peter Meggik </td>
+                                        <td> May 15, 2015 </td>
+                                        <td>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-gradient-primary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td> 5 </td>
+                                        <td> Edward </td>
+                                        <td> May 03, 2015 </td>
+                                        <td>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-gradient-danger" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td> 5 </td>
+                                        <td> Ronald </td>
+                                        <td> Jun 05, 2015 </td>
+                                        <td>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-gradient-info" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title text-white">Todo</h4>
+                            <div class="add-items d-flex">
+                                <input type="text" class="form-control todo-list-input" placeholder="What do you need to do today?">
+                                <button class="add btn btn-gradient-primary font-weight-bold todo-list-add-btn" id="add-task">Add</button>
+                            </div>
+                            <div class="list-wrapper">
+                                <ul class="d-flex flex-column-reverse todo-list todo-list-custom">
+                                    <li>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input class="checkbox" type="checkbox"> Meeting with Alisa </label>
+                                        </div>
+                                        <i class="remove mdi mdi-close-circle-outline"></i>
+                                    </li>
+                                    <li class="completed">
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input class="checkbox" type="checkbox" checked> Call John </label>
+                                        </div>
+                                        <i class="remove mdi mdi-close-circle-outline"></i>
+                                    </li>
+                                    <li>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input class="checkbox" type="checkbox"> Create invoice </label>
+                                        </div>
+                                        <i class="remove mdi mdi-close-circle-outline"></i>
+                                    </li>
+                                    <li>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input class="checkbox" type="checkbox"> Print Statements </label>
+                                        </div>
+                                        <i class="remove mdi mdi-close-circle-outline"></i>
+                                    </li>
+                                    <li class="completed">
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input class="checkbox" type="checkbox" checked> Prepare for presentation </label>
+                                        </div>
+                                        <i class="remove mdi mdi-close-circle-outline"></i>
+                                    </li>
+                                    <li>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input class="checkbox" type="checkbox"> Pick up kids from school </label>
+                                        </div>
+                                        <i class="remove mdi mdi-close-circle-outline"></i>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <footer class="footer">
+            <div class="container-fluid d-flex justify-content-between">
+                <span class="text-muted d-block text-center text-sm-start d-sm-inline-block">Copyright © bootstrapdash.com 2021</span>
+                <span class="float-none float-sm-end mt-1 mt-sm-0 text-end"> Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin template</a> from Bootstrapdash.com</span>
+            </div>
+        </footer>
+        <!-- partial -->
     </div>
-</div>
-<div id="viewcontent">
 </div>
 
 <script src="admin_template/vendors/js/vendor.bundle.base.js"></script>
@@ -448,137 +510,14 @@
 <script src="admin_template/js/settings.js"></script>
 <script src="admin_template/js/todolist.js"></script>
 <script src="admin_template/js/jquery.cookie.js" type="text/javascript"></script>
-<script>
-    if ($("#marketingOverview").length) {
-        var marketingOverviewChart = document.getElementById("marketingOverview").getContext('2d');
-        var marketingOverviewData = {
-            labels: ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"],
-            datasets: [{
-                label: 'năm 2021',
-                data: [<%=data0%>],
-                backgroundColor: "#1F3B93",
-                borderColor: [
-                    '#1F3B93',
-                ],
-                borderWidth: 0,
-                fill: true, // 3: no fill
-            }, {
-                label: 'năm 2022',
-                data: [<%=data%>],
-                backgroundColor: "#52CDFF",
-                borderColor: [
-                    '#52CDFF',
-                ],
-                borderWidth: 0,
-                fill: true, // 3: no fill
-
-            }, {
-                label: 'năm 2023',
-                data: [<%=data1%>],
-                backgroundColor: "#1F3BB3",
-                borderColor: [
-                    '#1F3BB3',
-                ],
-                borderWidth: 0,
-                fill: true, // 3: no fill
-            }]
-        };
-
-        var marketingOverviewOptions = {
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: {
-                yAxes: [{
-                    gridLines: {
-                        display: true,
-                        drawBorder: false,
-                        color: "#F0F0F0",
-                        zeroLineColor: '#F0F0F0',
-                    },
-                    ticks: {
-                        beginAtZero: true,
-                        autoSkip: true,
-                        maxTicksLimit: 5,
-                        fontSize: 10,
-                        color: "#6B778C"
-                    }
-                }],
-                xAxes: [{
-                    stacked: true,
-                    barPercentage: 0.35,
-                    gridLines: {
-                        display: false,
-                        drawBorder: false,
-                    },
-                    ticks: {
-                        beginAtZero: false,
-                        autoSkip: true,
-                        maxTicksLimit: 12,
-                        fontSize: 10,
-                        color: "#6B778C"
-                    }
-                }],
-            },
-            legend: false,
-            legendCallback: function (chart) {
-                var text = [];
-                text.push('<div class="chartjs-legend"><ul>');
-                for (var i = 0; i < chart.data.datasets.length; i++) {
-                    console.log(chart.data.datasets[i]); // see what's inside the obj.
-                    text.push('<li class="text-muted text-small">');
-                    text.push('<span style="background-color:' + chart.data.datasets[i].borderColor + '">' + '</span>');
-                    text.push(chart.data.datasets[i].label);
-                    text.push('</li>');
-                }
-                text.push('</ul></div>');
-                return text.join("");
-            },
-
-            elements: {
-                line: {
-                    tension: 0.4,
-                }
-            },
-            tooltips: {
-                backgroundColor: 'rgba(31, 59, 179, 1)',
-            }
-        }
-        var marketingOverview = new Chart(marketingOverviewChart, {
-            type: 'bar',
-            data: marketingOverviewData,
-            options: marketingOverviewOptions
-        });
-        document.getElementById('marketing-overview-legend').innerHTML = marketingOverview.generateLegend();
-    }
-
-    function viewContent(idcontact,iduser, nameUser, phone, email, content, condition) {
-        $.ajax({
-            url: "/BHNFoods/ViewContact",
-            type: 'get',
-            data: {
-                idcontact:idcontact,
-                iduser: iduser,
-                nameUser: nameUser,
-                email: email,
-                phone: phone,
-                content: content,
-                condition: condition,
-            },
-            success: function (data) {
-                const content = document.getElementById('viewcontent');
-                content.innerHTML = data;
-            },
-            error: function () {
-            }
-        });
-        $("#viewcontent .edit_formUser").css("display", "block");
-    }
-
-    function huy() {
-        $("#viewcontent .edit_formUser").css("display", "none");
-    }
-</script>
-
+<script src="assets/vendors/js/vendor.bundle.base.js"></script>
+<script src="assets/vendors/chart.js/Chart.min.js"></script>
+<script src="assets/js/jquery.cookie.js" type="text/javascript"></script>
+<script src="assets/js/off-canvas.js"></script>
+<script src="assets/js/hoverable-collapse.js"></script>
+<script src="assets/js/misc.js"></script>
+<script src="assets/js/dashboard.js"></script>
+<script src="assets/js/todolist.js"></script>
 <script src="admin_template/js/Chart.roundedBarCharts.js"></script>
 <!-- End custom js for this page-->
 </body>
