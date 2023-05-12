@@ -1,3 +1,5 @@
+<%@ page import="java.text.DecimalFormat" %>
+<%@ page import="model.DetailProduct" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>

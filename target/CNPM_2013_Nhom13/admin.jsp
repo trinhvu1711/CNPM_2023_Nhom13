@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="admin_template/vendors/typicons/typicons.css">
     <link rel="stylesheet" href="admin_template/vendors/simple-line-icons/css/simple-line-icons.css">
     <link rel="stylesheet" href="admin_template/vendors/css/vendor.bundle.base.css">
-    <link rel="stylesheet" href="vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+    <link rel="stylesheet" href="admin_template/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
     <link rel="stylesheet" href="admin_template/js/select.dataTables.min.css">
     <link rel="stylesheet" href="admin_template/css/vertical-layout-light/style.css">
 
@@ -127,8 +127,7 @@
                             </p>
                         </div>
                     </a>
-                    <a class="dropdown-item preview-item"
-                       onclick="viewContent()">
+                    <a class="dropdown-item preview-item">
                         <div class="preview-thumbnail">
                             <img src="https://assets.materialup.com/uploads/378d2c84-810d-477a-802b-d495646b9c4e/preview.jpg"
                                  alt="image" class="img-sm profile-pic"
@@ -503,13 +502,13 @@
 <script src="admin_template/vendors/chart.js/Chart.min.js"></script>
 <script src="admin_template/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
 <script src="admin_template/vendors/progressbar.js/progressbar.min.js"></script>
-
 <script src="admin_template/js/off-canvas.js"></script>
 <script src="admin_template/js/hoverable-collapse.js"></script>
 <script src="admin_template/js/template.js"></script>
 <script src="admin_template/js/settings.js"></script>
 <script src="admin_template/js/todolist.js"></script>
 <script src="admin_template/js/jquery.cookie.js" type="text/javascript"></script>
+
 <script src="assets/vendors/js/vendor.bundle.base.js"></script>
 <script src="assets/vendors/chart.js/Chart.min.js"></script>
 <script src="assets/js/jquery.cookie.js" type="text/javascript"></script>

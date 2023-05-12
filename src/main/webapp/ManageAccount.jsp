@@ -71,6 +71,19 @@
 
     }
 
+    .padd_right {
+        padding-right: 50px;
+    }
+
+    .edit_formUser {
+        height: 500%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.73);
+        position: absolute;
+        z-index: 1500;
+        top: 0;
+    }
+
     .edit_formUser .cen-div {
         margin: auto;
         background: #f1f1f1;
@@ -82,7 +95,11 @@
     .edit_formUser .btn_huy_update button {
         background: none;
         border: none;
-        display: none;
+    }
+
+    .btn_huy_update {
+        margin-bottom: 20px;
+        justify-content: end;
     }
 
     .btn_huy_update input {
@@ -96,13 +113,11 @@
     .btn_huy_update input:last-child {
         margin-left: 20px;
     }
-
     .btn_edit button {
         border: none;
         border-radius: 5px;
         padding: 5px 10px;
     }
-
     .page-body-wrapper .fix-navbar {
         padding-top: 20px;
     }
@@ -178,6 +193,51 @@
                     <input type="search" class="form-control" name="searchUser" placeholder="Search Here"
                            title="Search here">
                 </form>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link count-indicator" id="countDropdown" href="" data-bs-toggle="dropdown"
+                   aria-expanded="false">
+                    <i class="icon-mail icon-lg">[3]</i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0"
+                     aria-labelledby="countDropdown">
+                    <a class="dropdown-item py-3">
+                        <p class="mb-0 font-weight-medium float-left"> Thông báo </p>
+                        <span class="badge badge-pill badge-primary float-right">Xem tất cả</span>
+                    </a>
+                    <div class="dropdown-divider"></div>
+
+                    <a class="dropdown-item preview-item">
+                        <div class="preview-thumbnail">
+                            <img src="https://assets.materialup.com/uploads/378d2c84-810d-477a-802b-d495646b9c4e/preview.jpg"
+                                 alt="image" class="img-sm profile-pic"
+                                 style=" width: 70px;height: 50px;border-radius: 100%;">
+                        </div>
+                        <div class="preview-item-content flex-grow pyy-2">
+                            <p class="preview-subject ellipsis font-weight-medium text-dark">
+                                Xuân Hoa
+                            </p>
+                            <p class="fw-light small-text mb-0">
+                                20:01 04-05-2023
+                            </p>
+                        </div>
+                    </a>
+                    <a class="dropdown-item preview-item">
+                        <div class="preview-thumbnail">
+                            <img src="https://assets.materialup.com/uploads/378d2c84-810d-477a-802b-d495646b9c4e/preview.jpg"
+                                 alt="image" class="img-sm profile-pic"
+                                 style=" width: 70px;height: 50px;border-radius: 100%;">
+                        </div>
+                        <div class="preview-item-content flex-grow pyy-2">
+                            <p class="preview-subject ellipsis font-weight-medium text-dark">
+                                Trịnh Long Vũ
+                            </p>
+                            <p class="fw-light small-text mb-0">
+                                20:01 04-05-2022
+                            </p>
+                        </div>
+                    </a>
+                </div>
             </li>
         </ul>
         <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
