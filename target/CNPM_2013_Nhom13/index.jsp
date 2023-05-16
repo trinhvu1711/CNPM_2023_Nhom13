@@ -78,7 +78,7 @@
               <a href="contact.html" class="nav-link">Contact</a>
             </li>
             <li class="nav-item">
-              <a href="login " class="nav-link"><i class="fa-solid fa-user"></i></a>
+              <a href="LoginForm.jsp" class="nav-link"><i class="fa-solid fa-user"></i></a>
             </li>
           </ul>
         </div>

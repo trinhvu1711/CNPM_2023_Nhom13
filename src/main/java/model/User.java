@@ -119,4 +119,22 @@ public class User {
     public void setDecentralization(int decentralization) {
         this.decentralization = decentralization;
     }
+
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "iduser='" + iduser + '\'' +
+                ", address='" + address + '\'' +
+                ", pass='" + pass + '\'' +
+                ", name='" + name + '\'' +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
+                ", birthday=" + birthday +
+                ", datesignup=" + datesignup +
+                ", sex=" + sex +
+                ", decentralization=" + decentralization +
+                '}';
+    }
+
 }

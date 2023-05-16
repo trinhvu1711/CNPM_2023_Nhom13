@@ -25,7 +25,23 @@ public class UserService {
             return   handle.createUpdate("UPDATE `user` u set u.decentralization= "+decentralization+"  WHERE u.iduser='"+idUser+"'").execute();
         });
     }
+
+//    6. UserDataService sử dụng phương thức getUser(username, password) trả về User cho LoginController
+    public User getUser(String username, String password){
+        return JDBIConnector.get().withHandle(handle -> {
+        String sql = "SELECT iduser, address, pass, name, phone, email, birthday, date_signup, sex, decentralization FROM user " +
+                     "WHERE email = :email AND pass = :pass";
+
+        return handle.createQuery(sql)
+                     .bind("email", username)
+                     .bind("pass", password)
+                     .mapToBean(User.class)
+                     .findOne()
+                     .orElse(null);
+    });
+    }
     public static void main(String[] args) {
-        System.out.println(getInstance().getListUser());
+//        System.out.println(getInstance().getListUser());
+        System.out.println(getInstance().getUser("ledang200234@gmail.com","123456").checkDecentralization());
     }
 }
