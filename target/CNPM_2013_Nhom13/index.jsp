@@ -1,3 +1,5 @@
+<%@ page import="java.text.DecimalFormat" %>
+<%@ page import="model.DetailProduct" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
@@ -21,7 +23,7 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" />
     <link rel="stylesheet" href="css/owl.theme.default.min.css" />
     <link rel="stylesheet" href="css/magnific-popup.css" />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/aos.css" />
 
     <link rel="stylesheet" href="css/ionicons.min.css" />
@@ -58,7 +60,7 @@
               <a href="index.html" class="nav-link">Home</a>
             </li>
             <li class="nav-item">
-              <a href="about.html" class="nav-link">About</a>
+              <a href="" class="nav-link">Menu</a>
             </li>
             <li class="nav-item">
               <a href="services.html" class="nav-link">Services</a>
@@ -75,6 +77,9 @@
             <li class="nav-item">
               <a href="contact.html" class="nav-link">Contact</a>
             </li>
+            <li class="nav-item">
+              <a href="LoginForm.jsp" class="nav-link"><i class="fa-solid fa-user"></i></a>
+            </li>
           </ul>
         </div>
       </div>
@@ -83,7 +88,7 @@
 
     <div
       class="hero-wrap ftco-degree-bg"
-      style="background-image: url('images/bg_1.jpg')"
+      style="background-image: url('https://th.bing.com/th/id/R.9798d980fa39c84daa692261ebe7cd29?rik=2k4N7YxmBY%2b9VA&pid=ImgRaw&r=0')"
       data-stellar-background-ratio="0.5"
     >
       <div class="overlay"></div>
