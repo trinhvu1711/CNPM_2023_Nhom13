@@ -1,357 +1,230 @@
-<%@ page import="java.util.List" %>
 <%@ page import="java.text.DecimalFormat" %>
-<%@ page import="model.Product" %>
 <%@ page import="model.DetailProduct" %>
-
-<%@ page contentType="text/html; charset=UTF-8" language="java" pageEncoding="UTF-8" %>
-
-<!doctype html>
-<html lang="en">
+<%@ page import="java.util.List" %>
+<%@ page contentType="text/html; charset=UTF-8" language="java" %>
+<!DOCTYPE html>
+<html lang="zxx">
 <head>
-  <meta charset="UTF-8">
-  <meta name="description" content="Ogani Template">
-  <meta name="keywords" content="Ogani, unica, creative, html">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>BHNFoods | Sản phẩm</title>
+    <!-- Meta Tag -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name='copyright' content=''>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Title Tag  -->
+    <title>CNPM</title>
+    <link rel="stylesheet" href="csspro/css/bootstrap.css">
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="csspro/css/magnific-popup.min.css">
+    <link rel="stylesheet" href="csspro/css/font-awesome.css">
+    <!-- Fancybox -->
+    <link rel="stylesheet" href="csspro/css/jquery.fancybox.min.css">
+    <!-- Themify Icons -->
+    <link rel="stylesheet" href="csspro/css/themify-icons.css">
+    <!-- Nice Select CSS -->
+    <link rel="stylesheet" href="csspro/css/niceselect.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="csspro/css/animate.css">
+    <!-- Flex Slider CSS -->
+    <link rel="stylesheet" href="csspro/css/flex-slider.min.css">
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="csspro/css/owl-carousel.css">
+    <!-- Slicknav -->
+    <link rel="stylesheet" href="csspro/css/slicknav.min.css">
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
-
-  <!-- Css Styles -->
-  <link rel="stylesheet" href="body_design/css/bootstrap.min.css" type="text/css">
-  <link rel="stylesheet" href="body_design/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="body_design/css/elegant-icons.css" type="text/css">
-  <link rel="stylesheet" href="body_design/css/nice-select.css" type="text/css">
-  <link rel="stylesheet" href="body_design/css/jquery-ui.min.css" type="text/css">
-  <link rel="stylesheet" href="body_design/css/owl.carousel.min.css" type="text/css">
-  <link rel="stylesheet" href="body_design/css/slicknav.min.css" type="text/css">
-  <link rel="stylesheet" href="body_design/css/style.css" type="text/css">
+    <!-- Eshop StyleSheet -->
+    <link rel="stylesheet" href="csspro/css/reset.css">
+    <link rel="stylesheet" href="csspro/style.css">
+    <link rel="stylesheet" href="csspro/css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 </head>
+<body class="js">
 
-<body>
+<nav style="background: black!important;" class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light"
+     id="ftco-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">Car<span>Parts</span></a>
+        <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#ftco-nav"
+                aria-controls="ftco-nav"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="oi oi-menu"></span> Menu
+        </button>
 
-
-<%@ include file="header.jsp" %>
-
-
-<!-- Product Section Begin -->
-<section class="product spad" style="padding-top: 20px">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-3 col-md-5">
-        <div class="sidebar">
-          <div class="sidebar__item">
-            <div class="hero__categories">
-              <div class="hero__categories__all">
-                <span>Danh sách sản phẩm</span>
-              </div>
-              <ul>
-                <li><a href="/BHNFoods/ListProduct?kind=1&page=1">BMW</a></li>
-                <li><a href="/BHNFoods/ListProduct?kind=2&page=1">VINFAST</a></li>
-                <li><a href="/BHNFoods/ListProduct?kind=3&page=1">TOYOTA</a></li>
-                <li><a href="/BHNFoods/ListProduct?kind=4&page=1">MAZDA</a></li>
-                <li><a href="/BHNFoods/ListProduct?kind=5&page=1">MERCEDES</a></li>
-                <li><a href="/BHNFoods/ListProduct?kind=4&page=1">HYUNDAI</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="sidebar__item">
-            <div class="latest-product__text">
-              <h4>Sản phẩm mới nhất</h4>
-              <div class="latest-product__slider owl-carousel">
-                <div class="latest-prdouct__slider__item">
-                  <a href="#" class="latest-product__item" >
-                    <div class="latest-product__item__pic">
-                      <img src="images/image_1.jpg" alt="" >
-                    </div>
-                    <div class="latest-product__item__text">
-                      <h6>Bột năng Tấn Sang</h6>
-                      <span>40.000đ</span>
-                    </div>
-                  </a>
-                  <a href="#" class="latest-product__item">
-                    <div class="latest-product__item__pic">
-                      <img src="images/image_1.jpg" alt="" >
-                    </div>
-                    <div class="latest-product__item__text">
-                      <h6>Đậu đỏ Xuân Hồng 500g</h6>
-                      <span>25.000đ</span>
-                    </div>
-                  </a>
-                  <a href="#" class="latest-product__item">
-                    <div class="latest-product__item__pic">
-                      <img src="images/image_1.jpg" alt="">
-                    </div>
-                    <div class="latest-product__item__text">
-                      <h6>Khoai mỡ túi 1kg(1-2 củ)</h6>
-                      <span>35.000đ</span>
-                    </div>
-                  </a>
-                </div>
-                <div class="latest-prdouct__slider__item">
-                  <a href="#" class="latest-product__item">
-                    <div class="latest-product__item__pic">
-                      <img src="images/image_1.jpg" alt="">
-                    </div>
-                    <div class="latest-product__item__text">
-                      <h6>Gạo nếp Cái Hoa Vàng- CoopSelect 1kg</h6>
-                      <span>36.000đ</span>
-                    </div>
-                  </a>
-                  <a href="#" class="latest-product__item">
-                    <div class="latest-product__item__pic">
-                      <img src="images/image_1.jpg" alt="">
-                    </div>
-                    <div class="latest-product__item__text">
-                      <h6> Ngũ cốc dinh dưỡng Yumfood 500g</h6>
-                      <span>105.000đ</span>
-                    </div>
-                  </a>
-                  <a href="#" class="latest-product__item">
-                    <div class="latest-product__item__pic">
-                      <img src="images/image_1.jpg" alt="">
-                    </div>
-                    <div class="latest-product__item__text">
-                      <h6>Đậu đen Việt San 150g</h6>
-                      <span>25.000đ</span>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item ">
+                    <a href="index.jsp" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/CNPM/Product" class="nav-link">Product</a>
+                </li>
+                <li class="nav-item">
+                    <a href="pricing.jsp" class="nav-link">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a href="car.jsp " class="nav-link">Cars</a>
+                </li>
+                <li class="nav-item">
+                    <a href="blog.jsp " class="nav-link">Blog</a>
+                </li>
+                <li class="nav-item active">
+                    <a href="contact.jsp" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="LoginForm.jsp" class="nav-link"><i class="fa-solid fa-user"></i></a>
+                </li>
+            </ul>
         </div>
-      </div>
-      <div class="col-lg-9 col-md-7">
-
-        <div class="filter__item">
-          <div class="row">
-            <div class="col-lg-4 col-md-5">
-              <div class="filter__sort">
-                <span>Sắp xếp</span>
-                <select name="sort" class="sort-table" id="sort-tableID">
-                  <option class="sort-item" value="0">Tất cả</option>
-                  <option class="sort-item" value="1"><a>Giảm Giá</a></option>
-                  <option class="sort-item" value="2">Giá thấp đến cao</option>
-                  <option class="sort-item" value="3">Giá cao đến thấp</option>
-                </select>
-              </div>
-            </div>
-
-          </div>
-        </div>
-        <div id="content" class="row">
-          <%   DecimalFormat decF = new DecimalFormat("#,###");
-            List<DetailProduct> productList = (List<DetailProduct>) request.getAttribute("listProduct");
-            for(DetailProduct p: productList) {
-              int price = p.getPrice();
-          %>
-          <div class="col-lg-4 col-md-6 col-sm-6">
-            <div class="product__item">
-              <div class="product__item__pic set-bg" data-setbg="<%=p.getUrl()%>">
-
-                <ul class="product__item__pic__hover">
-                  <li><button id="heart<" class="background-button" style="color: white" onclick="loveInListProd()"><i class="fa fa-heart"></i></button></li>
-
-                  <li><button id="heart<%=p.getIdpr()%>" onclick="loveInListProd('<%=p.getIdpr()%>', this.id)"><i class="fa fa-heart"></i></button></li>
-
-                  <li><button id="cart<%=p.getIdpr()%>" onclick="addToCartInListProd('<%=p.getIdpr()%>', this.id)"><i class="fa fa-shopping-cart"></i></button></li>
-
-                </ul>
-              </div>
-              <div class="product__item__text">
-                <a href="/BHNFoods/oneProduct?id=<%=p.getIdpr()%>"><%=p.getNamepr()%><br> <span><%=decF.format(price).replace(',','.')%>đ</span></a>
-              </div>
-            </div>
-          </div>
-          <%}%>
-        </div>
-        <div class="product__pagination">
-
-          <button onclick="loadMoreProductLeft()"><i class="fa fa-long-arrow-left"></i></button>
-
-          <%int count =(int)request.getAttribute("count");
-            for (int i = 0; i < count; i++) {%>
-          <button  id="btn<%=i+1%>" class="btn-loadMore" onclick="loadMoreProduct(this.value)" value="<%=i+ 1%>"><%=i+ 1%></button>
-          <%}%>
-
-          <button onclick="loadMoreProductRight()"><i class="fa fa-long-arrow-right"></i></button>
-
-        </div>
-      </div>
     </div>
-  </div>
+</nav>
+<section class="product-area shop-sidebar shop section header-inner">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="all-category">
+                    <h3 class="cat-heading"><i class="fa fa-bars" aria-hidden="true"></i>DANH MỤC</h3>
+                    <ul class="main-category">
+                        <li><a class="text-dark" href="#" > BMW<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                            <ul class="sub-category">
+                                <li><a class="text-dark"href="#">BMW series 6</a></li>
+                                <li><a class="text-dark" href="#">BMW series 7</a></li>
+                                <li><a class="text-dark"  href="#">BMW X5</a></li>
+                            </ul>
+                        </li>
+                        <li><a class="text-dark" href="#"> HYUNDAI<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                            <ul class="sub-category">
+                                <li><a class="text-dark" href="#">BMW series 6</a></li>
+                                <li><a class="text-dark" href="#">BMW series 7</a></li>
+                                <li><a class="text-dark" href="#">BMW X5</a></li>
+                            </ul>
+                        </li>
+                        <li><a class="text-dark" href="#"> MERCEDES<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                            <ul class="sub-category">
+                                <li><a class="text-dark" href="#">BMW series 6</a></li>
+                                <li><a class="text-dark" href="#">BMW series 7</a></li>
+                                <li><a class="text-dark" href="#">BMW X5</a></li>
+                            </ul>
+                        </li>
+                        <li><a class="text-dark" href="#">VINFAST</a></li>
+                        <li><a class="text-dark" href="#">ISUZU</a></li>
+                        <li><a class="text-dark" href="#">TOYOTA</a></li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-9 col-md-8 col-12">
+                <div class="row">
+                    <div class="col-12">
+                        <!-- Shop Top -->
+                        <div class="shop-top">
+                            <div class="shop-shorter">
+                                <div class="single-shorter">
+                                    <label>Show :</label>
+                                    <select>
+                                        <option selected="selected">09</option>
+                                        <option>15</option>
+                                        <option>25</option>
+                                        <option>30</option>
+                                    </select>
+                                </div>
+                                <div class="single-shorter">
+                                    <label>Sắp <xếp></xếp> :</label>
+                                    <select>
+                                        <option>Cao đến thấp</option>
+                                        <option>Thấp đến cao</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <ul class="view-mode">
+                                <li class="active"><a href="shop-grid.html"><i class="fa fa-th-large"></i></a></li>
+                                <li><a href="shop-list.html"><i class="fa fa-th-list"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <%DecimalFormat decF = new DecimalFormat("#,###");
+                        List<DetailProduct> produser = (List<DetailProduct>) request.getAttribute("produser");
+                        for (DetailProduct p : produser) {
+                    %>
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="single-product">
+                            <div class="product-img">
+                                <a href="">
+                                    <img class="default-img" src="<%=p.getUrl()%>"  alt="#">
+                                    <img class="hover-img" src="<%=p.getUrl()%>" alt="#">
+                                </a>
+                                <div class="button-head">
+                                    <div class="product-action">
+                                        <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-regular fa-heart"></i><span>Yêu thích</span></a>
+                                        <a title="Wishlist" href="#"><i class="fa-solid fa-cart-shopping"></i><span>Thêm vào giỏ</span></a>
+
+                                    </div>
+                                    <div class="product-action-2">
+                                        <a title="Add to cart" href="#"><%=p.getNameCar()%></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h3><a href=""><%=p.getNamepr()%></a></h3>
+                                <div class="product-price">
+                                    <span><%= decF.format(p.getPrice())%></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <%}%>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
+
+
 <%@ include file="footer.jsp" %>
-<!-- Footer Section End -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script>
-  var current = 1;
-  var maxCountPage = $('button.btn-loadMore').length;
-  $("#btn" + current).addClass('background-button');
-  var queryString = window.location.search;
-  var urlParams = new URLSearchParams(queryString);
-  var kind = urlParams.get('kind');
-  var page = urlParams.get('page');
-  function loadMoreProduct(index) {
-    $("#btn" + current).removeClass('background-button');
-    current = index;
-    $("#btn" + current).addClass('background-button');
 
-    $.ajax({
-      url: "/BHNFoods/loadMoreProduct",
-      type: 'get',
-      data: {
-        kind : kind,
-        page : page,
-        step : current,
-        sort: $('#sort-tableID').val().trim()
-      },
-      success: function(data) {
-        const content = document.getElementById("content");
-        content.innerHTML = data;
-      },
-      error: function () {
-      }
-    });
-  }
-  function loadMoreProductLeft() {
-    $("#btn" + current).removeClass('background-button');
-    if (current - 1 >= 1) {
-      current -= 1;
-    }
-    $("#btn" + current).addClass('background-button');
-    $.ajax({
-      url: "/BHNFoods/loadMoreProduct",
-      type: 'get',
-      data: {
-        kind : kind,
-        page : page,
-        step : current,
-        sort: $('#sort-tableID').val().trim()
-      },
-      success: function(data) {
-        const content = document.getElementById("content");
-        content.innerHTML = data;
-      },
-      error: function () {
-      }
-    });
-  }
-  function loadMoreProductRight() {
-    $("#btn" + current).removeClass('background-button');
-    if (parseInt(current) + 1 <= maxCountPage) {
-      current = parseInt(current) + 1;
-    }
-    $("#btn" + current).addClass('background-button');
-    $.ajax({
-      url: "/BHNFoods/loadMoreProduct",
-      type: 'get',
-      data: {
-        kind : kind,
-        page : page,
-        step : current,
-        sort: $('#sort-tableID').val().trim()
-      },
-      success: function(data) {
-        const content = document.getElementById("content");
-        content.innerHTML = data;
-      },
-      error: function () {
-      }
-    });
-  }
-  function loveInListProd(id, idTag) {
-    let condition = 0; //0 la detele khoi database, 1 la insert vao database
-    if(document.getElementById(idTag).classList.contains('background-button')) {
-      $('button#' + idTag).removeClass('background-button');
-      $('button#' + idTag).css('color', 'black')
-      condition = 0;
-    } else {
-      $('button#' + idTag).addClass('background-button');
-      $('button#' + idTag).css('color', 'white')
-      condition = 1;
-    }
-    $.ajax({
-      url: "/BHNFoods/addToLoveProd",
-      type: 'get',
-      data: {
-        id: id,
-        condition : condition
-      },
-      error: function () {
-      }
-    });
-  }
-  function addToCartInListProd(id, idTag) {
-    $('button#' + idTag).addClass('background-button');
-    $('button#' + idTag).css('color', 'white');
-    $.ajax({
-      url: "/BHNFoods/addToCart",
-      type: 'get',
-      data: {
-        id: id,
-        amount: 1
-      },
-      success: function (data) {
-        const content = document.getElementById('totalCart');
-        content.innerHTML = data;
-      },
-      error: function () {
-      }
-    });
-  }
-
-  $('#sort-tableID').change(function () {
-    $.ajax({
-      url: "/BHNFoods/loadMoreProduct",
-      type: "get",
-      data: {
-        kind: kind,
-        step : current,
-        sort: $(this).val().trim()
-      },
-      success: function (data) {
-        const content = document.getElementById("content");
-        content.innerHTML = data;
-      },
-      error: function (xhr) {
-      }
-    })
-  })
-  function searchByName(param) {
-    var txtSearch = param.value;
-    $.ajax({
-      url: "/BHNFoods/searchByAjax",
-      type: "get",
-      data: {
-        txt: txtSearch
-      },
-      success: function (data) {
-        const content = document.getElementById("content");
-        content.innerHTML = data;
-      },
-      error: function (xhr) {
-      }
-    })
-  }
-
-</script>
-<!-- Js Plugins -->
-<script src="body_design/js/jquery-3.3.1.min.js"></script>
-<%--<script src="body_design/js/jquery.nice-select.min.js"></script>--%>
-<script src="body_design/js/jquery-ui.min.js"></script>
-<script src="body_design/js/jquery.slicknav.js"></script>
-<script src="body_design/js/mixitup.min.js"></script>
-<script src="body_design/js/owl.carousel.min.js"></script>
-<script src="body_design/js/main.js"></script>
-
-
-
-
-
+<!-- Jquery -->
+<script src="csspro/js/jquery.min.js"></script>
+<script src="csspro/js/jquery-migrate-3.0.0.js"></script>
+<script src="csspro/js/jquery-ui.min.js"></script>
+<!-- Popper JS -->
+<script src="csspro/js/popper.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="csspro/js/bootstrap.min.js"></script>
+<!-- Color JS -->
+<script src="csspro/js/colors.js"></script>
+<!-- Slicknav JS -->
+<script src="csspro/js/slicknav.min.js"></script>
+<!-- Owl Carousel JS -->
+<script src="csspro/js/owl-carousel.js"></script>
+<!-- Magnific Popup JS -->
+<script src="csspro/js/magnific-popup.js"></script>
+<!-- Waypoints JS -->
+<script src="csspro/js/waypoints.min.js"></script>
+<!-- Countdown JS -->
+<script src="csspro/js/finalcountdown.min.js"></script>
+<!-- Nice Select JS -->
+<script src="csspro/js/nicesellect.js"></script>
+<!-- Flex Slider JS -->
+<script src="csspro/js/flex-slider.js"></script>
+<!-- ScrollUp JS -->
+<script src="csspro/js/scrollup.js"></script>
+<!-- Onepage Nav JS -->
+<script src="csspro/js/onepage-nav.min.js"></script>
+<!-- Easing JS -->
+<script src="csspro/js/easing.js"></script>
+<!-- Active JS -->
+<script src="csspro/js/active.js"></script>
 </body>
-
 </html>

@@ -38,22 +38,22 @@
 
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item ">
+                <li class="nav-item active">
                     <a href="index.jsp" class="nav-link">Home</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a href="" class="nav-link">Menu</a>
                 </li>
-                <li class="nav-item">
-                    <a href="product.jsp" class="nav-link">Product</a>
+                <li class="nav-item active">
+                    <a href="/CNPM/Product" class="nav-link">Product</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a href="pricing.jsp" class="nav-link">Pricing</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a href="car.jsp " class="nav-link">Cars</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a href="blog.jsp " class="nav-link">Blog</a>
                 </li>
                 <li class="nav-item active">

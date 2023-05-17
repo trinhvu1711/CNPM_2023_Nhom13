@@ -57,7 +57,7 @@
               <a href="menu.jsp" class="nav-link">Menu</a>
             </li>
             <li class="nav-item">
-              <a href="product.jsp" class="nav-link">Product</a>
+              <a href="/CNPM/Product" class="nav-link">Product</a>
             </li>
             <li class="nav-item">
               <a href="pricing.jsp" class="nav-link">Pricing</a>
