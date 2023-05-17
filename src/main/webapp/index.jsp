@@ -1,21 +1,15 @@
 <%@ page import="java.text.DecimalFormat" %>
 <%@ page import="model.DetailProduct" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <title>CarParts</title>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 
-      <link
-      href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap"
-      rel="stylesheet"
-    />
+      <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet"/>
 
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css" />
     <link rel="stylesheet" href="css/animate.css" />
@@ -56,26 +50,26 @@
 
         <div class="collapse navbar-collapse" id="ftco-nav">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a href="index.html" class="nav-link">Home</a>
+            <li class="nav-item ">
+              <a href="index.jsp" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item ">
+              <a href="menu.jsp" class="nav-link">Menu</a>
             </li>
             <li class="nav-item">
-              <a href="" class="nav-link">Menu</a>
+              <a href="services.jsp" class="nav-link">Services</a>
             </li>
             <li class="nav-item">
-              <a href="services.html" class="nav-link">Services</a>
+              <a href="pricing.jsp" class="nav-link">Pricing</a>
             </li>
             <li class="nav-item">
-              <a href="pricing.html" class="nav-link">Pricing</a>
+              <a href="car.jsp" class="nav-link">Cars</a>
             </li>
             <li class="nav-item">
-              <a href="car.html" class="nav-link">Cars</a>
+              <a href="blog.jsp" class="nav-link">Blog</a>
             </li>
-            <li class="nav-item">
-              <a href="blog.html" class="nav-link">Blog</a>
-            </li>
-            <li class="nav-item">
-              <a href="contact.html" class="nav-link">Contact</a>
+            <li class="nav-item ">
+              <a href="contact.jsp" class="nav-link">Contact</a>
             </li>
             <li class="nav-item">
               <a href="LoginForm.jsp" class="nav-link"><i class="fa-solid fa-user"></i></a>

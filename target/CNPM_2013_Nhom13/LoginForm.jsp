@@ -254,6 +254,7 @@ form button:hover {
   </style>
 </head>
 <body>
+<%--7.1.c LoginForm hiện thị thông báo lỗi cho người dùng nếu đăng nhập thất bại--%>
 <%
       String msg = (String) request.getAttribute("messageResponse");
       if (msg != null){
@@ -275,7 +276,7 @@ form button:hover {
     <div class="form">
       <h1>Hello!</h1>
       <div class="container">
-        <%--1. Form cho người dùng điền username và pass--%>
+        <%-- Form cho người dùng điền username và pass--%>
         <form action="/Login" method="get">
         <%--@declare id="username1"--%><%--@declare id="password1"--%>
           <%--        field input cho người dùng nhập username--%>
@@ -284,10 +285,10 @@ form button:hover {
           <%--        field input cho người dùng nhập pass--%>
         <input placeholder="Password" type="password" class="password1" name="password" required/>
           <label for="password1"  style="display:none">Password Required</label>
-          <%--2. Người dùng nhấp vào nút đăng nhập.--%>
-<%--3. Dữ liệu username, pass sẽ được truyền qua LoginController với action="LoginController" và method="get".--%>
+          <%--Người dùng nhấp vào nút đăng nhập.--%>
+<%-- Dữ liệu username, pass sẽ được truyền qua LoginController với action="LoginController" và method="get".--%>
         <button type="submit" id="login" class="btn" />Sign In</button>
-          <%--7.1.c LoginForm hiện thị thông báo lỗi cho người dùng nếu đăng nhập thất bại--%>
+
 
         </form>
 
