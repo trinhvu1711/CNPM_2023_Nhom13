@@ -29,9 +29,9 @@ public class LoginController extends HttpServlet {
 //  Nếu User được trả về hợp lệ và người dùng có Role là "User" thì chuyển hướng đến index.
                 if (role.equals("User")) {
                     response.sendRedirect("Home");
-// Nếu User được trả về hợp lệ và người dùng có Role là "Admin" thì chuyển hướng đến MangageAccount.
+// Nếu User được trả về hợp lệ và người dùng có Role là "Admin" thì chuyển hướng đến admin.
                 } else if (role.equals("Admin")) {
-                    response.sendRedirect("ManageUser");
+                    response.sendRedirect("admin.jsp");
                 }
 // Nếu User được trả về hợp lệ và người dùng có Role là "Đã bị khoá" thì chuyển hướng đến index và thông báo lỗi.
                  else if (role.equals("Đã bị khoá")) {
