@@ -74,7 +74,7 @@ public class FormEditUser extends HttpServlet {
                 "                                <label class=\"\">Trạng thái:</label>\n" +
                 "                            </div>\n" +
                 "                            <div class=\"form-group padd_right\" style=\"\">\n" +
-                "                                <input type=\"radio\" checked=\" \"  name=\"decentralization\" value=\"0\" class=\"form-checked\" placeholder=\"\">\n" +
+                "                                <input type=\"radio\"  name=\"decentralization\" value=\"0\" class=\"form-checked\" placeholder=\"\">\n" +
                 "                                <label class=\"\">User</label>\n" +
                 "                            </div>\n" +
                 "                            <div class=\"form-group padd_right \" style=\"\">\n" +
