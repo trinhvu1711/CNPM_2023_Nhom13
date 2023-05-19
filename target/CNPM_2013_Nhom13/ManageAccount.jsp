@@ -345,7 +345,7 @@
                                                                     </td>
                                                                     <td>
                                                                         <div class="btn_edit">
-                                                                            <button onclick="clickEdit('<%=u.getIduser()%>','<%=u.getName()%>','<%=u.getPass()%>','<%=u.getEmail()%>','<%=u.getPhone()%>','<%=u.getDatesignup()%>','<%=u.getAddress()%>', <%=u.getDecentralization()%>)">
+                                                                            <button onclick="clickEdit('<%=u.getIduser()%>','<%=u.getName()%>','<%=u.getPass()%>','<%=u.getEmail()%>','<%=u.getPhone()%>','<%=u.getDatesignup()%>','<%=u.getAddress()%>', '<%=u.getDecentralization()%>')">
                                                                                 <h4 class="card-title card-title-dash">
                                                                                     Xem <i
                                                                                         class="fa-regular fa-pen-to-square"></i>
@@ -374,7 +374,7 @@
 </div>
 
 
-<%-- xem và update user--%>
+<%-- xem và update trạng thái user--%>
 <div id="formEditUser">
 
 </div>
@@ -382,7 +382,7 @@
 
 <script>
     // xem và update user
-    function clickEdit(idUser, nameUser, passw, email, phone, datesignup, address) {
+    function clickEdit(idUser, nameUser, passw, email, phone, datesignup, address, decentralization ) {
         $.ajax({
             url: "/CNPM/formEditUser",
             type: 'get',
@@ -394,6 +394,7 @@
                 phone: phone,
                 datesignup: datesignup,
                 address: address,
+                decentralization:decentralization,
             },
             success: function (data) {
                 const content = document.getElementById('formEditUser');
@@ -408,6 +409,12 @@
     function huy() {
         $(".edit_formUser").css("display", "none");
     }
+     function  checked(checkDecentralization, value ){
+        if (checkDecentralization==value){
+            $(".padd_right .form-checked").addEventListener('checked');
+        }
+     }
+
 
 
 </script>

@@ -10,13 +10,15 @@ import java.io.PrintWriter;
 @WebServlet(name = "FormEditUser", value = "/formEditUser")
 public class FormEditUser extends HttpServlet {
     @Override
-    // hiện form gồm thông tin tài khoản và checkbox phân quyền, tình trạng tài khoản
+    // hiện form gồm thông tin tài khoản và btn radio phân quyền, tình trạng tài khoản
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String idUser = request.getParameter("idUser");
         String nameUser = request.getParameter("nameUser");
         String passw = request.getParameter("passw");
         String email = request.getParameter("email");
         String phone = request.getParameter("phone");
+        String checkDecentralization= request.getParameter("checkDecentralization");
+        String decentralization= request.getParameter("decentralization");
         String datesignup = request.getParameter("datesignup");
         String address = request.getParameter("address");
         PrintWriter out = response.getWriter();
@@ -66,29 +68,30 @@ public class FormEditUser extends HttpServlet {
                 "                                <input value=\"" + address + "\" disabled class=\"form-control input_addpr\" placeholder=\"\">\n" +
                 "                            </div>\n" +
                 "                        </div>\n" +
-                //     checkbox update tình trạng tài khoản
+                                    //    btn radio để update tình trạng tài khoản
                 "                        <div class=\"col-md d-flex col_addprod\">\n" +
                 "                            <div class=\"form-group  padd_right\" style=\"\">\n" +
                 "                                <label class=\"\">Trạng thái:</label>\n" +
                 "                            </div>\n" +
-                "                            <div class=\"form-group  padd_right\" style=\"\">\n" +
-                "                                <input type=\"checkbox\"  checked name=\"decentralization\" value=\"0\" class=\"form-\" placeholder=\"\">\n" +
+                "                            <div class=\"form-group padd_right\" style=\"\">\n" +
+                "                                <input type=\"radio\" checked=\" \"  name=\"decentralization\" value=\"0\" class=\"form-checked\" placeholder=\"\">\n" +
                 "                                <label class=\"\">User</label>\n" +
                 "                            </div>\n" +
                 "                            <div class=\"form-group padd_right \" style=\"\">\n" +
-                "                                <input type=\"checkbox\" name=\"decentralization\" class=\"form-\" value=\"1\" placeholder=\"\">\n" +
+                "                                <input type=\"radio\"   name=\"decentralization\" class=\"form-checked\" value=\"1\" placeholder=\"\">\n" +
                 "                                <label class=\"\">Admin</label>\n" +
                 "                            </div>\n" +
                 "                            <div class=\"form-group padd_right \" style=\"\">\n" +
-                "                                <input type=\"checkbox\" name=\"decentralization\" class=\"form-\" value=\"-1\"  placeholder=\"\">\n" +
+                "                                <input type=\"radio\" name=\"decentralization\" class=\"form-checked\" value=\"-1\"  placeholder=\"\">\n" +
                 "                                <label class=\"\">Khoá</label>\n" +
                 "                            </div>\n" +
                 "                        </div>\n" +
                 "                        <div class=\"d-flex btn_huy_update\" style=\"justify-content: end;\">\n" +
                 "                            <input onclick=\"huy()\" type=\"button\" value=\"Hủy\">\n" +
-                // 3. nhận Lưu để lưu lại trạng thái tai khoản
+                // 3. nhận Lưu để lưu lại trạng thái tài khoản
                 // 4. database cập nhật
                 // 5. Form đóng lại
+                // 6. Cập nhật lại trạng thái tài khoản trên trang ManageAccount
                 "                            <input type=\"submit\" value=\" Lưu\">\n" +
                 "                        </div>\n" +
                 "                    </div>\n" +

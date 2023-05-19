@@ -137,7 +137,7 @@
                                     </select>
                                 </div>
                                 <div class="single-shorter">
-                                    <label>Sort By :</label>
+                                    <label>Sắp <xếp></xếp> :</label>
                                     <select>
                                         <option>Cao đến thấp</option>
                                         <option>Thấp đến cao</option>
