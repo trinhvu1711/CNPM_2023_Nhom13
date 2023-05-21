@@ -24,6 +24,6 @@ public class ManageUser extends HttpServlet {
         String idUser= request.getParameter("idUser");
         int decentralization= Integer.parseInt(request.getParameter("decentralization"));
         UserService.getInstance().updateUser( idUser, decentralization);
-        response.sendRedirect("http://localhost:8080/CNPM/ManageUser");
+        response.sendRedirect("/ManageUser");
     }
 }

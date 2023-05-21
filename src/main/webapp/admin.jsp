@@ -62,20 +62,20 @@
                      aria-labelledby="messageDropdown">
 
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item preview-item" href="/CNPM/admin.jsp">
+                    <a class="dropdown-item preview-item" href="/admin.jsp">
                         <div class="preview-item-content flex-grow py-2">
                             <p class="preview-subject ellipsis font-weight-medium text-dark">Admin</p>
                             <p class="fw-light small-text mb-0">Trang chủ</p>
                         </div>
                     </a>
-                    <a class="dropdown-item preview-item" href="/CNPM/ManageUser">
+                    <a class="dropdown-item preview-item" href="/ManageUser">
                         <div class="preview-item-content flex-grow py-2">
                             <p class="preview-subject ellipsis font-weight-medium text-dark">Người dùng </p>
                             <p class="fw-light small-text mb-0">Trang chi tiết người dùng</p>
                         </div>
                     </a>
                     <a class="dropdown-item preview-item"
-                       href="/CNPM/ManageProduct">
+                       href="/ManageProduct">
                         <div class="preview-item-content flex-grow py-2">
                             <p class="preview-subject ellipsis font-weight-medium text-dark">Sản Phẩm </p>
                             <p class="fw-light small-text mb-0">Trang chi tiết quản lý sản phẩm</p>

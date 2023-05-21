@@ -1,0 +1,15 @@
+controller\Product.class
+database\DB.class
+controller\FormEditUser.class
+database\AbBean.class
+controller\ManageUser.class
+service\UserService.class
+controller\ManageProduct.class
+database\DBProperties.class
+filter\Utf8.class
+controller\LoginController.class
+model\Product.class
+service\ProductService.class
+model\DetailProduct.class
+database\JDBIConnector.class
+model\User.class

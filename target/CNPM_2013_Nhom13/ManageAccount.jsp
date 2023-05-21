@@ -157,20 +157,20 @@
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0"
                      aria-labelledby="messageDropdown">
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item preview-item" href="/CNPM/admin.jsp">
+                    <a class="dropdown-item preview-item" href="/admin.jsp">
                         <div class="preview-item-content flex-grow py-2">
                             <p class="preview-subject ellipsis font-weight-medium text-dark">Admin</p>
                             <p class="fw-light small-text mb-0">Trang chủ</p>
                         </div>
                     </a>
-                    <a class="dropdown-item preview-item" href="/CNPM/ManageUser">
+                    <a class="dropdown-item preview-item" href="/ManageUser">
                         <div class="preview-item-content flex-grow py-2">
                             <p class="preview-subject ellipsis font-weight-medium text-dark">Người dùng </p>
                             <p class="fw-light small-text mb-0">Trang chi tiết người dùng</p>
                         </div>
                     </a>
                     <a class="dropdown-item preview-item"
-                       href="/CNPM/ManageProduct">
+                       href="/ManageProduct">
                         <div class="preview-item-content flex-grow py-2">
                             <p class="preview-subject ellipsis font-weight-medium text-dark">Sản Phẩm </p>
                             <p class="fw-light small-text mb-0">Trang chi tiết quản lý sản phẩm</p>
@@ -188,7 +188,7 @@
                 </div>
             </li>
             <li class="nav-item">
-                <form class="search-form" action="/CNPM/SearchUser" method="post">
+                <form class="search-form" action="/SearchUser" method="post">
                     <i class="icon-search"></i>
                     <input type="search" class="form-control" name="searchUser" placeholder="Search Here"
                            title="Search here">
@@ -250,25 +250,25 @@
 <div class="container-fluid page-body-wrapper">
     <nav class="sidebar sidebar-offcanvas fix-navbar" id="sidebar">
         <div class="nav-item menu_navbar">
-            <a href="/CNPM/admin.jsp" class="nav-item-link">
+            <a href="/admin.jsp" class="nav-item-link">
                 <i style="margin-right: 5px;" class="menu-icon mdi mdi-home"></i>
                 <span>Trang chủ</span>
             </a>
         </div>
         <div class="nav-item menu_navbar">
-            <a href="/CNPM/ManageUser" class="nav-item-link">
+            <a href="/ManageUser" class="nav-item-link">
                 <i style="margin-right: 5px;" class="menu-icon mdi mdi-account-circle"></i>
                 <span>Quản lý tài khoản</span>
             </a>
         </div>
         <div class="nav-item menu_navbar">
-            <a href="/CNPM/ManageProduct" class="nav-item-link">
+            <a href="/ManageProduct" class="nav-item-link">
                 <i style="margin-right: 5px;" class="menu-icon mdi mdi-view-module"></i>
                 <span>Quản lý sản phẩm</span>
             </a>
         </div>
         <div class="nav-item menu_navbar">
-            <a href="/CNPM/Login" class="nav-item-link">
+            <a href="/Login" class="nav-item-link">
                 <i style="margin-right: 5px;" class="fa-solid fa-arrow-right-from-bracket"></i>
                 <span>Đăng xuất</span>
             </a>
@@ -384,7 +384,7 @@
     // xem và update user
     function clickEdit(idUser, nameUser, passw, email, phone, datesignup, address, decentralization ) {
         $.ajax({
-            url: "/CNPM/formEditUser",
+            url: "/formEditUser",
             type: 'get',
             data: {
                 idUser: idUser,
