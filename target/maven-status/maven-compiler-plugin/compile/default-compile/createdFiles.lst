@@ -9,6 +9,7 @@ database\DBProperties.class
 filter\Utf8.class
 controller\LoginController.class
 model\Product.class
+controller\IndexServlet.class
 service\ProductService.class
 model\DetailProduct.class
 database\JDBIConnector.class

@@ -43,7 +43,7 @@
 <nav style="background: black!important;" class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light"
      id="ftco-navbar">
     <div class="container">
-        <a class="navbar-brand" href="index.html">Car<span>Parts</span></a>
+        <a class="navbar-brand" href="index.jsp">Car<span>Parts</span></a>
         <button
                 class="navbar-toggler"
                 type="button"
@@ -58,7 +58,7 @@
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item ">
-                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="index.jsp" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item">
                     <a href="" class="nav-link">Menu</a>
